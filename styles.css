@@ -1,0 +1,63 @@
+#darkmode {
+	width: 30vw;
+	height: 5vh;
+	display: block;
+	margin: 2vh auto;
+	border: none;
+	border-radius: 5px;
+	background: #4646e2;
+	color: white;
+	outline: none;
+}
+
+.table {
+	overflow-y: auto;
+	height: 100px;
+}
+
+.table thead th {
+	position: sticky;
+	top: 0;
+	background: #4646e2;
+	z-index: 1;
+	color: white;
+}
+
+#boton {
+	background: #4646e2;
+	border: 1px solid #4646e2;
+	outline: none;
+}
+
+#boton:hover {
+	background: #2e2e97;
+	border: 1px solid #2e2e97;
+}
+
+.darkmode {
+	background: black;
+	color: white;
+}
+
+.darkmode #cuerpo tr:hover,
+#cuerpo tr:hover {
+	background: white;
+	color: black;
+	transition: .3s ease all;
+	transform: scale(1.03);
+    cursor: pointer;
+}
+
+.table td, .table th{
+    border-top: 1px solid #4646e2;
+}
+
+
+#cuerpo tr {
+	transition: .3s ease;
+}
+
+#cuerpo tr:hover {
+	background: black;
+	color: white;
+}
