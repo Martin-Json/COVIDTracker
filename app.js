@@ -49,25 +49,22 @@ function ord() {
 
     cuerpo.innerHTML = "";
     let input = document.getElementById("input");
-    let confirmacionPais, confirmacionEscritura;
+    let guardarPais = [];
+
 
     for (let i = 0; i < ordenamiento.length; i++) {
-        if (input.value.toLowerCase() === ordenamiento[i].Country.toLowerCase()) {
-            confirmacionPais = true;
+        if (ordenamiento[i].Country.toLowerCase().includes(input.value.toLowerCase())) {
             mostrar(i, ordenamiento[i]);
-        }
-        if (input.value == null || input.value == "") {
-            confirmacionEscritura = false;
-            mostrar(i, ordenamiento[i]);
-        }
+            guardarPais.push(ordenamiento[i]);
+         }
     }
 
-    if (confirmacionPais != true && confirmacionEscritura != false) {
+    if (guardarPais.length === 0) {
         let div = document.createElement("div");
-        let body = document.getElementById("#body");
+        let body = document.getElementById("body");
+        body.appendChild(div);
         div.classList.add("alert", "alert-danger", "text-center");
         div.innerHTML = "No se pudo encontrar ese país.";
-        body.appendChild(div);
 
         setTimeout(() => {
             div.style.opacity = "0";
